@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   HashRouter as Router,
-  Route
+  Route, Redirect
 } from 'react-router-dom';
 
 import Home from '../Home/Home.js'
@@ -14,6 +14,7 @@ class App extends Component {
             <>
             <Router>
             <div className="app">
+            <Redirect exact from="/" to="/home" />
                 {/* route for the home page component  */}
             <Route exact path="/home" component={Home} />
             </div>
