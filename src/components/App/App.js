@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 
 import Home from '../Home/Home.js'
+import AppHeader from '../Header/Header.js'
 
 import { connect } from 'react-redux';
 
@@ -14,6 +15,7 @@ class App extends Component {
             <>
             <Router>
             <div className="app">
+                <AppHeader />
             <Redirect exact from="/" to="/home" />
                 {/* route for the home page component  */}
             <Route exact path="/home" component={Home} />
