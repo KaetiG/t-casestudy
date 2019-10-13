@@ -31,8 +31,8 @@ handleSubmit = () => {
     render() {
         return (
             <>
-                <Grid>
-                    <Grid.Column width={6}>
+                <Grid centered>
+                    <Grid.Column width={6} color="red">
                         <>
                         </>
                     </Grid.Column>
@@ -62,13 +62,17 @@ handleSubmit = () => {
                         <Button
                         className="submitButton"
                         fluid
-                        color="red"
+                        color="grey"
                         onClick={this.handleSubmit} >Submit</Button>
                     </Grid.Column>
-                    <Grid.Column width={6}>
+                    <Grid.Column width={6} color="blue">
                         <>
                         </>
                     </Grid.Column>
+                    <Grid.Row color="yellow">
+                        <>
+                        </>
+                    </Grid.Row>
                 </Grid>
             </>
         )
