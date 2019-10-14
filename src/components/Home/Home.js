@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 // import Semantic UI Components 
-import { Button, Icon, Header, Grid, Dropdown } from 'semantic-ui-react'
+import { Button, Grid, Dropdown } from 'semantic-ui-react';
 
 const routeOptions = [
     {key: 'get from API 1', value: 'get from API 1', text: 'get from API 1'},
@@ -25,7 +25,11 @@ const stopOptions = [
 ]
 
 class Home extends Component {
-handleSubmit = () => {
+    componentDidMount() {
+        this.props.dispatch({type: 'FETCH_ROUTES'})
+    }
+
+    handleSubmit = () => {
     console.log('submit clicked')
 }
     render() {
