@@ -1,15 +1,23 @@
 const express = require('express');
-require('dotenv').config();
-
 const app = express();
 const bodyParser = require('body-parser');
+const mtntRouter = require('./routes/MTNT');
 
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Route
+app.use('/', mtntRouter);
+
+//Metro Transit 
+// const MTNT = require("./metrotransit-nodetrip");
+// const API = new MTNT();
+
+
+
 // App Set //
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 /** Listen * */
 app.listen(PORT, () => {
