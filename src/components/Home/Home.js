@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 // import Semantic UI Components 
 import { Button, Grid, Dropdown } from 'semantic-ui-react';
 
-const routeOptions = [
-    {key: 'get from API 1', value: 'get from API 1', text: 'get from API 1'},
-    {key: 'get from API 2', value: 'get from API 2', text: 'get from API 2'},
-    {key: 'get from API 3', value: 'get from API 3', text: 'get from API 3'}
-]
+// const routeOptions = [
+//     //{key: this.props.routeReducer.Route, value: this.props.routeReducer.Route, text: this.props.routeReducer.Route},
+//     {key: 'get from API 2', value: 'get from API 2', text: 'get from API 2'},
+//     {key: 'get from API 3', value: 'get from API 3', text: 'get from API 3'}
+// ]
 
 const directionOptions = [
     {key: 'North', value: 'North', text: 'North'},
@@ -46,7 +46,12 @@ class Home extends Component {
                             placeholder='Select Route'
                             fluid
                             selection
-                            options={routeOptions}
+                            options={this.props.routes.map((routes)=> {
+                                return{
+                                    key: routes.Description,
+                                    value: routes.Route,
+                                    text: routes.Description + routes.Route
+                                }})}
                         />
                         <h2>Select Direction</h2>
                         <Dropdown
@@ -83,8 +88,8 @@ class Home extends Component {
     }
 }
 
-const mapStateToProps = (reduxState) => ({
-    reduxState,
-})
+const mapStateToProps = state => ({
+    routes: state.routeReducer
+  });
 
 export default connect(mapStateToProps)(Home);
