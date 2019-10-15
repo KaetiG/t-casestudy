@@ -29,6 +29,7 @@ handleRouteSelect = (e, { value }) => {
         route: value })
     console.log({value})
     this.props.dispatch({type: 'FETCH_DIRECTIONS', payload: value})
+    this.props.dispatch({type: 'SELECTED_ROUTE', payload: value})
 }
     render() {
         const { value } = this.state.route;
@@ -55,7 +56,7 @@ handleRouteSelect = (e, { value }) => {
                             onChange={this.handleRouteSelect}
                         />
                         <h2>Select Direction</h2>
-                        <Direction />
+                        <Direction route={value} />
                         <h2>Select Stop</h2>
                         <Dropdown
                             placeholder='Select Stop'

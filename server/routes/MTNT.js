@@ -29,4 +29,18 @@ router.get('/directions/:id', (req, res) => {
     })
 })
 
+router.get('/stops/:route/:direction', (req, res) => {
+    console.log('HERES THE PAYLOAD', req.params.route)
+    axios({
+        method: 'GET',
+        url: 'http://svc.metrotransit.org/NexTrip/Stops/'+req.params.route+'/'+req.params.direction,
+    }).then(response => {
+        console.log(response);
+        res.send(response.data)
+    }).catch(error => {
+        console.log('error making request', error);
+        res.sendStatus(500)
+    })
+})
+
 module.exports = router;

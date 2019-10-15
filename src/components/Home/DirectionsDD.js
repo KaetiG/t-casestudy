@@ -6,13 +6,12 @@ import { Dropdown } from 'semantic-ui-react';
 
 class Directions extends Component {
     state = {
-        direction: "",
+        direction: ""
     }
     handleDirectionSelect = (e, { value }) => {
-        this.setState({ 
-            direction: value })
-        console.log({value})
-        this.props.dispatch({type: 'FETCH_STOPS', payload: value})
+        const stopData = {route: this.props.selectedRoute, direction: value}
+        console.log(value, this.props.selectedRoute)
+        this.props.dispatch({type: 'FETCH_STOPS', payload: stopData})
     }
     render() {
         const { value } = this.state.direction;
@@ -37,7 +36,8 @@ class Directions extends Component {
 
 const mapStateToProps = state => ({
     routes: state.routeReducer,
-    directions: state.directionsReducer
+    directions: state.directionsReducer,
+    selectedRoute: state.singleRouteReducer
 });
 
 export default connect(mapStateToProps)(Directions);

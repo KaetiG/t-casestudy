@@ -8,7 +8,7 @@ function* getDirections(action) {
         yield put({type: 'CLEAR_DIRECTIONS'})
         yield put({ type: 'SET_DIRECTIONS', payload: getResponse.data })
       } catch(error) {
-        console.log('error getting routes', error);
+        console.log('error getting directions', error);
       }
 }
 

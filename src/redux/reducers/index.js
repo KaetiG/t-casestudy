@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import routeReducer from './routeReducer';
-import directionsReducer from './directionsReducer'
+import directionsReducer from './directionsReducer';
+import stopsReducer from './stopsReducer';
+import singleRouteReducer from './singleRouteReducer';
 
 
 
@@ -10,7 +12,9 @@ import directionsReducer from './directionsReducer'
 
 const rootReducer = combineReducers({
     routeReducer,
-    directionsReducer
+    directionsReducer,
+    stopsReducer,
+    singleRouteReducer
   });
   
   export default rootReducer;
