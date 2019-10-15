@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import Direction from './DirectionsDD';
 
 // import Semantic UI Components 
 import { Button, Grid, Dropdown } from 'semantic-ui-react';
-
-
-
-const directionOptions = [
-    {key: 'North', value: 'North', text: 'North'},
-    {key: 'South', value: 'South', text: 'South'},
-    {key: 'East', value: 'East', text: 'East'},
-    {key: 'West', value: 'West', text: 'West'}
-]
 
 const stopOptions = [
     {key: '1', value: '1', text: '1'},
@@ -63,12 +55,7 @@ handleRouteSelect = (e, { value }) => {
                             onChange={this.handleRouteSelect}
                         />
                         <h2>Select Direction</h2>
-                        <Dropdown
-                            placeholder='Select Direction'
-                            fluid
-                            selection
-                            options={directionOptions}
-                        />
+                        <Direction />
                         <h2>Select Stop</h2>
                         <Dropdown
                             placeholder='Select Stop'
