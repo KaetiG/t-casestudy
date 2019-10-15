@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Direction from './DirectionsDD';
 import Stops from './StopsDD';
+import Routes from './RoutesDD';
 
 // import Semantic UI Components 
-import { Button, Grid, Dropdown } from 'semantic-ui-react';
+import { Button, Grid } from 'semantic-ui-react';
 
 class Home extends Component {
-state = {
-    route: "",
-}
     componentDidMount() {
         this.props.dispatch({type: 'FETCH_ROUTES'})
     }
@@ -17,16 +15,7 @@ state = {
     handleSubmit = () => {
     console.log('submit clicked')
 }
-
-handleRouteSelect = (e, { value }) => {
-    this.setState({ 
-        route: value })
-    console.log({value})
-    this.props.dispatch({type: 'FETCH_DIRECTIONS', payload: value})
-    this.props.dispatch({type: 'SELECTED_ROUTE', payload: value})
-}
     render() {
-        const { value } = this.state.route;
         return (
             <>
                 <Grid centered>
@@ -36,19 +25,7 @@ handleRouteSelect = (e, { value }) => {
                     </Grid.Column>
                     <Grid.Column width={4}>
                         <h2>Select Route</h2>
-                        <Dropdown
-                            placeholder='Select Route'
-                            fluid
-                            selection
-                            options={this.props.routes.map((routes)=> {
-                                return{
-                                    key: routes.Description,
-                                    value: routes.Route,
-                                    text: routes.Description
-                                }})}
-                            value={value}
-                            onChange={this.handleRouteSelect}
-                        />
+                        <Routes />
                         <h2>Select Direction</h2>
                         <Direction />
                         <h2>Select Stop</h2>
