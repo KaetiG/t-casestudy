@@ -5,6 +5,7 @@ import stopsReducer from './stopsReducer';
 import singleRouteReducer from './singleRouteReducer';
 import selectedDirectionReducer from './selectedDirectionReducer';
 import selectedStopReducer from './selectedStopReducer';
+import nextripReducer from './nextripReducer';
 
 
 
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   stopsReducer,
   singleRouteReducer,
   selectedDirectionReducer,
-  selectedStopReducer
+  selectedStopReducer,
+  nextripReducer
 });
 
 export default rootReducer;

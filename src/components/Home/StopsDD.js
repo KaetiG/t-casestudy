@@ -16,6 +16,7 @@ class Stops extends Component {
     }
     handleSubmit = () => {
         console.log('submit clicked')
+        
     }
     render() {
         const { value } = this.state.stop;
@@ -49,7 +50,6 @@ class Stops extends Component {
                 fluid
                 color="grey"
                 disabled
-                //onClick={this.handleSubmit} 
                 >Submit</Button>
             }
             </>
