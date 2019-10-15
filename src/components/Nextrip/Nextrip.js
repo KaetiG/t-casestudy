@@ -33,6 +33,7 @@ class Nextrip extends Component {
                             </Table.Row>)}
                         </Table.Body>
                     </Table>
+                    <Button onClick={()=> {this.props.history.push('/home')}}>Go Back</Button>
                 </Grid.Column>
                 <Grid.Column width={3} color="blue">
                     <>

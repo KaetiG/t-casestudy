@@ -3,7 +3,7 @@ import {
   HashRouter as Router,
   Route, Redirect
 } from 'react-router-dom';
-
+//below are component imports
 import Home from '../Home/Home.js';
 import Nextrip from '../Nextrip/Nextrip';
 import AppHeader from '../Header/Header.js';
@@ -24,6 +24,7 @@ class App extends Component {
             </div>
             </Router>
             </>
+            //all routing is here in App.js
         )
     }
 }

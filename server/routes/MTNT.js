@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
+//GET REQUEST TO MT API FOR ROUTES
+
 router.get('/routes', (req, res) => {
     axios({
         method: 'GET',
@@ -14,6 +16,8 @@ router.get('/routes', (req, res) => {
         res.sendStatus(500)
     })
 })
+
+//GET REQUEST TO MT API FOR DIRECTIONS
 
 router.get('/directions/:id', (req, res) => {
     console.log('HERES THE PAYLOAD', req.params.id)
@@ -29,6 +33,8 @@ router.get('/directions/:id', (req, res) => {
     })
 })
 
+//GET REQUEST TO MT API FOR STOPS
+
 router.get('/stops/:route/:direction', (req, res) => {
     console.log('HERES THE PAYLOAD', req.params.route)
     axios({
@@ -42,6 +48,8 @@ router.get('/stops/:route/:direction', (req, res) => {
         res.sendStatus(500)
     })
 })
+
+//GET REQUEST TO MT API FOR NEXTRIP
 
 router.get('/nextrip/:route/:direction/:stop', (req, res) => {
     console.log('HERES THE PAYLOAD', req.params)

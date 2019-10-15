@@ -1,5 +1,5 @@
-import React from 'react'
-import { Header, Icon, Grid } from 'semantic-ui-react'
+import React from 'react';
+import { Header, Icon, Grid } from 'semantic-ui-react';
 
 const AppHeader = () => (
     <Grid textAlign="center">

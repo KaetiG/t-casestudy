@@ -10,12 +10,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Route
 app.use('/', mtntRouter);
 
-//Metro Transit 
-// const MTNT = require("./metrotransit-nodetrip");
-// const API = new MTNT();
-
-
-
 // App Set //
 const PORT = 5000;
 
