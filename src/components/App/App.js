@@ -20,7 +20,7 @@ class App extends Component {
             <Redirect exact from="/" to="/home" />
                 {/* route for the home page component  */}
             <Route exact path="/home" component={Home} />
-            <Route path="/nextrip/" component={Nextrip} />
+            <Route path="/nextrip" component={Nextrip} />
             </div>
             </Router>
             </>

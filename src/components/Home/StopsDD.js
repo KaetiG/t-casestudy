@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
 // import Semantic UI Components 
 import { Button, Dropdown } from 'semantic-ui-react';
@@ -15,7 +16,7 @@ class Stops extends Component {
         this.props.dispatch({type: 'FETCH_NEXTRIP', payload: tripData})
     }
     handleSubmit = () => {
-        console.log('submit clicked')
+        this.props.history.push('/nextrip')
         
     }
     render() {
@@ -66,4 +67,4 @@ const mapStateToProps = state => ({
     selectedStop: state.selectedStopReducer
 });
 
-export default connect(mapStateToProps)(Stops);
+export default withRouter(connect(mapStateToProps)(Stops));
