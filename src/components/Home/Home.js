@@ -33,11 +33,13 @@ state = {
 }
 
 handleRouteSelect = (e, { value }) => {
-    this.setState({ value })
+    this.setState({ 
+        route: value })
     console.log({value})
+    this.props.dispatch({type: 'FETCH_DIRECTIONS', payload: value})
 }
     render() {
-        const { value } = this.state;
+        const { value } = this.state.route;
         return (
             <>
                 <Grid centered>
@@ -49,7 +51,6 @@ handleRouteSelect = (e, { value }) => {
                         <h2>Select Route</h2>
                         <Dropdown
                             placeholder='Select Route'
-                            defaultValue=""
                             fluid
                             selection
                             options={this.props.routes.map((routes)=> {

@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import routeReducer from './routeReducer'
+import routeReducer from './routeReducer';
+import directionsReducer from './directionsReducer'
 
 
 
@@ -8,7 +9,8 @@ import routeReducer from './routeReducer'
 // This is imported in index.js as rootSaga
 
 const rootReducer = combineReducers({
-    routeReducer
+    routeReducer,
+    directionsReducer
   });
   
   export default rootReducer;

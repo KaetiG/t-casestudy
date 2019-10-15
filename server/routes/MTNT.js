@@ -15,10 +15,11 @@ router.get('/routes', (req, res) => {
     })
 })
 
-router.get('/direction/', (req, res) => {
+router.get('/directions/:id', (req, res) => {
+    console.log('HERES THE PAYLOAD', req.params.id)
     axios({
         method: 'GET',
-        url: 'http://svc.metrotransit.org/NexTrip/Directions/${ROUTE}',
+        url: 'http://svc.metrotransit.org/NexTrip/Directions/'+req.params.id,
     }).then(response => {
         console.log(response);
         res.send(response.data)
