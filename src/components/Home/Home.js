@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Direction from './DirectionsDD';
+import Stops from './StopsDD';
 
 // import Semantic UI Components 
 import { Button, Grid, Dropdown } from 'semantic-ui-react';
-
-const stopOptions = [
-    {key: '1', value: '1', text: '1'},
-    {key: '2', value: '2', text: '2'},
-    {key: '3', value: '3', text: '3'},
-    {key: '4', value: '4', text: '4'}
-]
 
 class Home extends Component {
 state = {
@@ -56,14 +50,9 @@ handleRouteSelect = (e, { value }) => {
                             onChange={this.handleRouteSelect}
                         />
                         <h2>Select Direction</h2>
-                        <Direction route={value} />
+                        <Direction />
                         <h2>Select Stop</h2>
-                        <Dropdown
-                            placeholder='Select Stop'
-                            fluid
-                            selection
-                            options={stopOptions}
-                        />
+                        <Stops />
                         <br />
                         <Button
                         className="submitButton"

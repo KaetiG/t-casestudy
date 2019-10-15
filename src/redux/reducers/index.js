@@ -3,6 +3,7 @@ import routeReducer from './routeReducer';
 import directionsReducer from './directionsReducer';
 import stopsReducer from './stopsReducer';
 import singleRouteReducer from './singleRouteReducer';
+import selectedDirectionReducer from './selectedDirectionReducer';
 
 
 
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
     routeReducer,
     directionsReducer,
     stopsReducer,
-    singleRouteReducer
+    singleRouteReducer,
+    selectedDirectionReducer,
   });
   
   export default rootReducer;
