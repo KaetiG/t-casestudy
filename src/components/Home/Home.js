@@ -4,11 +4,7 @@ import { connect } from 'react-redux'
 // import Semantic UI Components 
 import { Button, Grid, Dropdown } from 'semantic-ui-react';
 
-// const routeOptions = [
-//     //{key: this.props.routeReducer.Route, value: this.props.routeReducer.Route, text: this.props.routeReducer.Route},
-//     {key: 'get from API 2', value: 'get from API 2', text: 'get from API 2'},
-//     {key: 'get from API 3', value: 'get from API 3', text: 'get from API 3'}
-// ]
+
 
 const directionOptions = [
     {key: 'North', value: 'North', text: 'North'},
@@ -25,6 +21,9 @@ const stopOptions = [
 ]
 
 class Home extends Component {
+state = {
+    route: "",
+}
     componentDidMount() {
         this.props.dispatch({type: 'FETCH_ROUTES'})
     }
@@ -32,7 +31,13 @@ class Home extends Component {
     handleSubmit = () => {
     console.log('submit clicked')
 }
+
+handleRouteSelect = (e, { value }) => {
+    this.setState({ value })
+    console.log({value})
+}
     render() {
+        const { value } = this.state;
         return (
             <>
                 <Grid centered>
@@ -44,14 +49,17 @@ class Home extends Component {
                         <h2>Select Route</h2>
                         <Dropdown
                             placeholder='Select Route'
+                            defaultValue=""
                             fluid
                             selection
                             options={this.props.routes.map((routes)=> {
                                 return{
                                     key: routes.Description,
                                     value: routes.Route,
-                                    text: routes.Description + routes.Route
+                                    text: routes.Description
                                 }})}
+                            value={value}
+                            onChange={this.handleRouteSelect}
                         />
                         <h2>Select Direction</h2>
                         <Dropdown
